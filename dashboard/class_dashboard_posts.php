@@ -307,10 +307,10 @@ function add(){
 $this->db->add_Posts(
 
 htmlentities(str_replace(" ","",strtolower($_POST['postname']))),
-base_url."blog/".htmlentities(str_replace(" ","",strtolower($_POST['postname']))),//postlink
+base_url."blog/post.php?p=".htmlentities(str_replace(" ","",strtolower($_POST['postname']))),//postlink
 htmlentities($_POST['posttitle']),
 htmlentities($_POST['postsubtitle']),
-htmlentities($_POST['content']),
+$_POST['content'],
 htmlentities($_POST['posttype']),
 htmlentities($_POST['poststatus']),
 htmlentities($_POST['postauthor']),
@@ -325,10 +325,10 @@ htmlentities($_POST['lastupdate'])
 
 function edit(){
 $this->db->set_Posts_Where(htmlentities($_POST['id']),"post_name",htmlentities($_POST['postname']));
-$this->db->set_Posts_Where(htmlentities($_POST['id']),"post_link",base_url ."blog/".htmlentities(str_replace(" ","",strtolower($_POST['postname']))));
+$this->db->set_Posts_Where(htmlentities($_POST['id']),"post_link",base_url ."blog/post.php?p=".htmlentities(str_replace(" ","",strtolower($_POST['postname']))));
 $this->db->set_Posts_Where(htmlentities($_POST['id']),"post_title",htmlentities($_POST['posttitle']));
 $this->db->set_Posts_Where(htmlentities($_POST['id']),"post_subtitle",htmlentities($_POST['postsubtitle']));
-$this->db->set_Posts_Where(htmlentities($_POST['id']),"post_content",htmlentities($_POST['content']));
+$this->db->set_Posts_Where(htmlentities($_POST['id']),"post_content",str_replace("<?","wow",$_POST['content']));
 $this->db->set_Posts_Where(htmlentities($_POST['id']),"post_type",htmlentities($_POST['posttype']));
 $this->db->set_Posts_Where(htmlentities($_POST['id']),"post_status",htmlentities($_POST['poststatus']));
 $this->db->set_Posts_Where(htmlentities($_POST['id']),"post_author",htmlentities($_POST['postauthor']));
