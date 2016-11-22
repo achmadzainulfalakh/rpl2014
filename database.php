@@ -60,11 +60,46 @@ $result = mysqli_query($con,$query);
 return $result;
 }
 //menambah posts(dashboard)
-function add_Posts($judul,$isi,$penulis){
+function add_Posts(
+$postname,
+$postlink,
+$posttitle,
+$postsubtitle,
+$content,
+$posttype,
+$poststatus,
+$postauthor,
+$lastupdate
+){
 $con=$this->connect();
-$query="INSERT INTO `posts` (`ID`,`username`,`password`,`level`) values ('null','$username','$password','$level')";
+$query="INSERT INTO `posts` (
+`ID`,
+`post_name`,
+`post_link`,
+`post_title`,
+`post_subtitle`,
+`post_content`,
+`post_type`,
+`post_status`,
+`post_author`,
+`post_update`
+) values (
+'null',
+'$postname',
+'$postlink',
+'$posttitle',
+'$postsubtitle',
+'$content',
+'$posttype',
+'$poststatus',
+'$postauthor',
+'$lastupdate')";
 $result = mysqli_query($con,$query);
+if(!$result){
+echo "Error: " . $query . "<br>" . mysqli_error($con);
+} else{
 return $result;
+}
 }
 //Mengubah posts(dashboard)
 function set_Posts_Where($id,$col,$val){

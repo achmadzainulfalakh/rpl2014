@@ -79,8 +79,8 @@ function cek_akun($redirect_link,$u,$p){
 
 
 global $database;
-$username= htmlspecialchars($u);
-$password= htmlspecialchars($p);
+$username= htmlentities($u);
+$password= htmlentities($p);
 
 $con=$database->connect();
 $query="SELECT * FROM users where username='$username' and password='$password'";
@@ -115,8 +115,8 @@ function cek_login($u,$p){
 
 
 global $database;
-$username= htmlspecialchars($u);
-$password= htmlspecialchars($p);
+$username=	htmlentities($u);
+$password= htmlentities($p);
 
 $con=$database->connect();
 $query="SELECT * FROM users where username='$username' and password='$password'";

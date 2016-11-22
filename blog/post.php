@@ -4,7 +4,10 @@ include "page.php";
 include "../database.php";
 $database =new database("localhost","root","","rpl2014");
 $page=new page;
-$post=mysqli_fetch_array($database->get_Post(htmlspecialchars($_GET['p'])));
+error_reporting(0);
+if(!$post=mysqli_fetch_array($database->get_Post(htmlentities($_GET['p'])))){
+header('Location: http://RPL2014.com/page-not-found.php');
+}
 
 $page->fhead($post['post_title']);
 $page->fnav();
