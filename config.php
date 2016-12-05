@@ -1,10 +1,10 @@
 <?php
 
-define('base_url','http://rpl2014.com/');
-define('base_css','http://rpl2014.com/assets/css/');
-define('base_js','http://rpl2014.com/assets/js/');
-define('base_upload','http://rpl2014.com/assets/upload/');
-define('favicon','http://rpl2014.com/assets/upload/img/favicon.ico');
+define('base_url','http://rpl2014.com:801/');
+define('base_css', base_url . 'assets/css/');
+define('base_js', base_url . 'assets/js/');
+define('base_upload', base_url . 'assets/upload/');
+define('favicon', base_url . 'assets/upload/img/favicon.ico');
 
 
 define('namasitus','SMK TI ANNAJIYAH');

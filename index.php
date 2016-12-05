@@ -1,5 +1,5 @@
 <?php
 //Keep silence
-header('Location: http://RPL2014.com/blog/');
+header('Location: ' . base_url . 'blog/');
 // Nama file: index.php
 // Lokasi File: RPL2014/index.php

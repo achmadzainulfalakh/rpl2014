@@ -15,11 +15,11 @@ if(empty($_SESSION["username"])){
 $database->connect();
 $vLogin->index(); //menjalankan metode index dari vlogin
 } else {
-header('Location: http://rpl2014.com/dashboard/?p=dashboard');
+header('Location: ' . base_url . 'dashboard/?p=dashboard');
 }
 
 if($_POST){
-$vLogin->cek_akun("http://rpl2014.com/dashboard/?p=dashboard",$_POST['username'],$_POST['password']);
+$vLogin->cek_akun( base_url . 'dashboard/?p=dashboard',$_POST['username'],$_POST['password']);
 }
 
 // Nama file: login.php

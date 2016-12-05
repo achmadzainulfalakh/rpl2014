@@ -98,7 +98,7 @@ function header(){
 				$active="";
 				}
 				echo '<li class="'.$active.'">
-                    <a href="http://rpl2014.com/dashboard/?p='.$v['link'].'">
+                    <a href=' . base_url . 'dashboard/?p='.$v['link'].'>
                         <i class='.$v['classcss'].'></i>
                         <p>'.$v['link'].'</p>
                     </a>
@@ -128,7 +128,7 @@ function nav(){
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="http://rpl2014.com/dashboard/?p=logout&token=<?=md5($_SESSION['username'])?>">
+                            <a href="<?=base_url ?>dashboard/?p=logout&token=<?=md5($_SESSION['username'])?>">
                                 Log out
                             </a>
                         </li>

@@ -1,7 +1,7 @@
 <?php global $dashboard ?>
 <?php global $dashboard_menu ?>
 <?php if(empty($dashboard)){
-header('Location: http://RPL2014.com/page-not-found.php');
+header('Location: '. base_url . 'page-not-found.php');
 } else {
 ?>
 <?php $dashboard->head("Menu") ?>
